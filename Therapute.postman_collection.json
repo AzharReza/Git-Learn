@@ -1,0 +1,973 @@
+{
+	"info": {
+		"_postman_id": "e79a1f24-5496-4319-8f1d-237234e42a17",
+		"name": "Therapute",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "User Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "Provider First Name",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Provider Last Nam",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "prodvider@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "Green Town Lahore",
+									"type": "text"
+								},
+								{
+									"key": "user_type",
+									"value": "provider",
+									"type": "default"
+								},
+								{
+									"key": "plan_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "payment_method",
+									"value": "paypal",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "free",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "category_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_therapute}}/api/register",
+							"host": [
+								"{{base_url_therapute}}"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "doc@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_therapute}}/api/login",
+							"host": [
+								"{{base_url_therapute}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{therapute_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "category_id",
+									"value": "2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "first_name",
+									"value": "Provider First Name",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "last_name",
+									"value": "Provider Last Nam",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "location",
+									"value": "Green Town Lahore",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "license_no",
+									"value": "123456XMGH",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "rate",
+									"value": "123",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "flexible_rate",
+									"value": "120",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "bio",
+									"value": "Hey Its Provider-Your Friend. Hey Its Provider-Your Friend",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "focus",
+									"value": "Psycatriy, Mental Wellness, Therapy, Counsling",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/D:/data/temp/pexels-photo-220453.jpeg",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_therapute}}/api/updateProfile",
+							"host": [
+								"{{base_url_therapute}}"
+							],
+							"path": [
+								"api",
+								"updateProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{therapute_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "old_password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								},
+								{
+									"key": "c_password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_therapute}}/api/changePassword",
+							"host": [
+								"{{base_url_therapute}}"
+							],
+							"path": [
+								"api",
+								"changePassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_therapute}}/api/forgotPassword",
+							"host": [
+								"{{base_url_therapute}}"
+							],
+							"path": [
+								"api",
+								"forgotPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verifyOtp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_therapute}}/api/verifyOtp",
+							"host": [
+								"{{base_url_therapute}}"
+							],
+							"path": [
+								"api",
+								"verifyOtp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "password",
+									"value": "1234567",
+									"type": "text"
+								},
+								{
+									"key": "c_password",
+									"value": "1234567",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "hafizadil431@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_therapute}}/api/resetPassword",
+							"host": [
+								"{{base_url_therapute}}"
+							],
+							"path": [
+								"api",
+								"resetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{therapute_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user_id",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_therapute}}/api/logout",
+							"host": [
+								"{{base_url_therapute}}"
+							],
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Provider",
+			"item": [
+				{
+					"name": "getProviderPlans",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_therapute}}/api/getProviderPlans",
+							"host": [
+								"{{base_url_therapute}}"
+							],
+							"path": [
+								"api",
+								"getProviderPlans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProviderCategories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_therapute}}/api/getProviderCategories",
+							"host": [
+								"{{base_url_therapute}}"
+							],
+							"path": [
+								"api",
+								"getProviderCategories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Slots",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_therapute}}/api/slots",
+							"host": [
+								"{{base_url_therapute}}"
+							],
+							"path": [
+								"api",
+								"slots"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Days",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_therapute}}/api/days",
+							"host": [
+								"{{base_url_therapute}}"
+							],
+							"path": [
+								"api",
+								"days"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "setProviderAvailability",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{therapute_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"setProviderAvailability\":{\r\n      \"1\":[\r\n         1,2,3,4\r\n      ],\r\n      \"2\":[\r\n         1,2,3,4\r\n      ]\r\n   }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_therapute}}/api/setProviderAvailability",
+							"host": [
+								"{{base_url_therapute}}"
+							],
+							"path": [
+								"api",
+								"setProviderAvailability"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProviderAvailability",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "provider_id",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_therapute}}/api/ProviderAvailability",
+							"host": [
+								"{{base_url_therapute}}"
+							],
+							"path": [
+								"api",
+								"ProviderAvailability"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProviderAvailability",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{therapute_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"setProviderAvailability\":{\r\n      \"1\":[\r\n         4,5,6,7\r\n      ],\r\n      \"2\":[\r\n         1,2,3,4\r\n      ]\r\n   }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_therapute}}/api/updateProviderAvailability",
+							"host": [
+								"{{base_url_therapute}}"
+							],
+							"path": [
+								"api",
+								"updateProviderAvailability"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProvidersByCategory",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{therapute_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "category_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_therapute}}/api/getProvidersByCategory",
+							"host": [
+								"{{base_url_therapute}}"
+							],
+							"path": [
+								"api",
+								"getProvidersByCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProviderDetail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{therapute_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "provider_id",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_therapute}}/api/getProviderDetail",
+							"host": [
+								"{{base_url_therapute}}"
+							],
+							"path": [
+								"api",
+								"getProviderDetail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProviderAppointments",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{therapute_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "provider_id",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_therapute}}/api/getProviderAppointments",
+							"host": [
+								"{{base_url_therapute}}"
+							],
+							"path": [
+								"api",
+								"getProviderAppointments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stripe Payment",
+			"item": [
+				{
+					"name": "createAccount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "muhammadawais192.168.1.1@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://theraputeadmin.co/stripe/public/api/createAccount",
+							"protocol": "https",
+							"host": [
+								"theraputeadmin",
+								"co"
+							],
+							"path": [
+								"stripe",
+								"public",
+								"api",
+								"createAccount"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createAccountLink",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "account_id",
+									"value": "acct_1Kbe6VRFEEBs1oFX",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://theraputeadmin.co/stripe/public/api/createAccountLink",
+							"protocol": "https",
+							"host": [
+								"theraputeadmin",
+								"co"
+							],
+							"path": [
+								"stripe",
+								"public",
+								"api",
+								"createAccountLink"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAccount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "account_id",
+									"value": "acct_1KY33TRRqQzZXU9Q",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://172.16.23.223/stripe_payment_gateway/public/api/deleteAccount",
+							"protocol": "http",
+							"host": [
+								"172",
+								"16",
+								"23",
+								"223"
+							],
+							"path": [
+								"stripe_payment_gateway",
+								"public",
+								"api",
+								"deleteAccount"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Charge Customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "connected_account_id",
+									"value": "acct_1KbqPD2EOz3IZNdA",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "stripeToken",
+									"value": "tok_1KdDSWDBN9WmmfqkI0iQ8M8M",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://theraputeadmin.co/stripe/public/api/charge-customer",
+							"protocol": "https",
+							"host": [
+								"theraputeadmin",
+								"co"
+							],
+							"path": [
+								"stripe",
+								"public",
+								"api",
+								"charge-customer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "getUserPlans",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{therapute_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{base_url_therapute}}/api/getUserPlans",
+					"host": [
+						"{{base_url_therapute}}"
+					],
+					"path": [
+						"api",
+						"getUserPlans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProviderAvailability",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{therapute_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "provider_id",
+							"value": "4",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url_therapute}}/api/getProviderAvailability",
+					"host": [
+						"{{base_url_therapute}}"
+					],
+					"path": [
+						"api",
+						"getProviderAvailability"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bookAppointment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{therapute_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "provider_id",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "day_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "slot_id",
+							"value": "12",
+							"type": "text"
+						},
+						{
+							"key": "date",
+							"value": "2022-02-03",
+							"type": "text"
+						},
+						{
+							"key": "meeting_type",
+							"value": "in-person",
+							"type": "text"
+						},
+						{
+							"key": "meeting_at",
+							"value": "Green Town Lahore",
+							"type": "text"
+						},
+						{
+							"key": "rate",
+							"value": "12",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url_therapute}}/api/bookAppointment",
+					"host": [
+						"{{base_url_therapute}}"
+					],
+					"path": [
+						"api",
+						"bookAppointment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserAppointments",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{therapute_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url_therapute}}/api/getUserAppointments",
+					"host": [
+						"{{base_url_therapute}}"
+					],
+					"path": [
+						"api",
+						"getUserAppointments"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
